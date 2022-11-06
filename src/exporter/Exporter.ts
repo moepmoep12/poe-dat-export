@@ -111,7 +111,7 @@ export class DatExporter {
     this._schema = response.data as SchemaFile;
   }
 
-  async _getDatFile(fullPath: string): Promise<DatFile> {
+  private async _getDatFile(fullPath: string): Promise<DatFile> {
     this._debug(`Requesting .dat file from path %s`, fullPath);
 
     const location = getFileInfo(
@@ -132,7 +132,7 @@ export class DatExporter {
     return FileReader.readDatFile(fullPath, buffer);
   }
 
-  _importHeaders(name: string, datFile: DatFile): NamedHeader[] {
+  private _importHeaders(name: string, datFile: DatFile): NamedHeader[] {
     const headers = [] as NamedHeader[];
 
     const schema = this._schema.tables.find((s) => s.name === name);
@@ -173,7 +173,7 @@ export class DatExporter {
     return headers;
   }
 
-  _exportAllRows(headers: NamedHeader[], datFile: DatFile) {
+  private _exportAllRows(headers: NamedHeader[], datFile: DatFile) {
     // filter out columns without name
     const columns = headers
       .filter((header) => header?.name)
@@ -196,7 +196,7 @@ export class DatExporter {
       );
   }
 
-  _getFilePath(fileName: string, language: Language): string {
+  private _getFilePath(fileName: string, language: Language): string {
     const lang = language == Language.English ? "" : `/${language}`;
     return `Data${lang}/${fileName}.dat64`;
   }
