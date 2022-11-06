@@ -1,6 +1,6 @@
 {
   "name": "poe-dat-export",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Library for exporting .dat files as tables from the content.ggpk of the game Path Of Exile",
   "main": "./dist/index.js",
   "exports": "./dist/index.js",
