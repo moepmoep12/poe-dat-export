@@ -2,10 +2,10 @@ export interface Header {
   offset: number;
   type: {
     array?: boolean;
-    boolean?: {};
+    boolean?: unknown;
     integer?: { unsigned: boolean; size: number };
     decimal?: { size: number };
-    string?: {};
+    string?: unknown;
     key?: { foreign: boolean };
   };
 }
