@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/moepmoep12/poe-dat-export/compare/v1.2.0...v1.2.1) (2022-11-10)
+
+
+### Bug Fixes
+
+* cache dir ([4452ba1](https://github.com/moepmoep12/poe-dat-export/commit/4452ba1954140696471f45b104c0c07e01e51ccb))
+
 # [1.2.0](https://github.com/moepmoep12/poe-dat-export/compare/v1.1.0...v1.2.0) (2022-11-10)
 
 
