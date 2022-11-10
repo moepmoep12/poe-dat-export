@@ -192,7 +192,7 @@ export class OnlineBundleLoader implements IBundleLoader {
     const cacheDir = this._getCacheDir();
     if (!fs.existsSync(cacheDir)) {
       this._debug(`Creating cache dir %s`, cacheDir);
-      fs.rmSync(path.join(process.cwd(), "/.cache"), {
+      fs.rmSync(path.join(__dirname, "../.cache"), {
         recursive: true,
         force: true,
       });
@@ -231,6 +231,6 @@ export class OnlineBundleLoader implements IBundleLoader {
   }
 
   private _getCacheDir(): string {
-    return path.join(process.cwd(), "./cache", this.Options.patchVersion);
+    return path.join(__dirname, "../.cache", this.Options.patchVersion);
   }
 }
