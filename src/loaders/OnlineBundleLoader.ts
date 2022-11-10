@@ -33,6 +33,14 @@ export interface OnlineBundleLoaderOptions {
    * Default: true.
    */
   cacheFile?: boolean;
+
+  /**
+   * The absolute path to a cache folder where files will be cached.
+   *
+   * @remarks The folder will be created if it not exists
+   * @remarks Only used when `cacheFile` is true
+   */
+  cacheDir?: string;
 }
 
 interface DownloadState {
@@ -105,6 +113,7 @@ export class OnlineBundleLoader implements IBundleLoader {
       endpoint: new URL("https://poe-bundles.snos.workers.dev/"),
       patchVersion: "",
       cacheFile: true,
+      cacheDir: path.join(__dirname, "../.cache"),
     };
     return Object.assign(optionalDefaults, options);
   }
@@ -189,10 +198,13 @@ export class OnlineBundleLoader implements IBundleLoader {
 
     if (!this._options.cacheFile) return;
 
-    const cacheDir = this._getCacheDir();
+    const cacheDir = path.join(
+      this.Options.cacheDir,
+      this.Options.patchVersion
+    );
     if (!fs.existsSync(cacheDir)) {
       this._debug(`Creating cache dir %s`, cacheDir);
-      fs.rmSync(path.join(__dirname, "../.cache"), {
+      fs.rmSync(this.Options.cacheDir, {
         recursive: true,
         force: true,
       });
@@ -221,16 +233,15 @@ export class OnlineBundleLoader implements IBundleLoader {
   }
 
   private _tryLoadFromFile(filePath: string): ArrayBuffer | undefined {
-    const cacheDir = this._getCacheDir();
+    const cacheDir = path.join(
+      this.Options.cacheDir,
+      this.Options.patchVersion
+    );
     const cachedFilePath = path.join(cacheDir, filePath.replace(/\//g, "@"));
 
     if (fs.existsSync(cachedFilePath)) {
       const bundleBin = fs.readFileSync(cachedFilePath);
       return bundleBin;
     }
-  }
-
-  private _getCacheDir(): string {
-    return path.join(__dirname, "../.cache", this.Options.patchVersion);
   }
 }
