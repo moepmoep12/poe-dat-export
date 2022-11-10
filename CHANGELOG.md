@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/moepmoep12/poe-dat-export/compare/v1.0.1...v1.1.0) (2022-11-10)
+
+
+### Features
+
+* Change cache location ([725ece9](https://github.com/moepmoep12/poe-dat-export/commit/725ece9b9a8da7668dbb2ddaf72a778e2d5b8bec))
+
 ## [1.0.1](https://github.com/moepmoep12/poe-dat-export/compare/v1.0.0...v1.0.1) (2022-11-06)
 
 
