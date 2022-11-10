@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/moepmoep12/poe-dat-export/compare/v1.1.0...v1.2.0) (2022-11-10)
+
+
+### Features
+
+* Add cacheDir option ([c9e463f](https://github.com/moepmoep12/poe-dat-export/commit/c9e463f004149dea97147be5370d95680bc77602))
+
 # [1.1.0](https://github.com/moepmoep12/poe-dat-export/compare/v1.0.1...v1.1.0) (2022-11-10)
 
 
