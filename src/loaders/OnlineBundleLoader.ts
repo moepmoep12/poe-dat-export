@@ -115,6 +115,7 @@ export class OnlineBundleLoader implements IBundleLoader {
       cacheFile: true,
       cacheDir: path.join(__dirname, "../.cache"),
     };
+    if (!options.cacheDir) delete options.cacheDir;
     return Object.assign(optionalDefaults, options);
   }
 
