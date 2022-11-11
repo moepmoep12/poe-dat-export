@@ -23,6 +23,14 @@ interface NamedHeader extends Header {
   name: string;
 }
 
+export interface ExportResult {
+  [k: string]:
+    | string
+    | boolean
+    | FieldReader.DatKeyForeign
+    | (string | boolean | FieldReader.DatKeyForeign)[];
+}
+
 export class DatExporter {
   private readonly _debug: Debug.Debugger;
   private _options: Required<ExporterOptions>;
@@ -173,7 +181,10 @@ export class DatExporter {
     return headers;
   }
 
-  private _exportAllRows(headers: NamedHeader[], datFile: DatFile) {
+  private _exportAllRows(
+    headers: NamedHeader[],
+    datFile: DatFile
+  ): ExportResult[] {
     // filter out columns without name
     const columns = headers
       .filter((header) => header?.name)
