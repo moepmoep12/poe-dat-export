@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/moepmoep12/poe-dat-export/compare/v1.2.1...v1.3.0) (2022-11-11)
+
+
+### Features
+
+* Add ExportResult ([a81af4e](https://github.com/moepmoep12/poe-dat-export/commit/a81af4e98cc2c14ef210c46411c83e4e609ea154))
+
 ## [1.2.1](https://github.com/moepmoep12/poe-dat-export/compare/v1.2.0...v1.2.1) (2022-11-10)
 
 
