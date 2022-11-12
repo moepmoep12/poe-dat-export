@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/moepmoep12/poe-dat-export/compare/v1.3.0...v1.3.1) (2022-11-12)
+
+
+### Bug Fixes
+
+* Update LICENSE ([1ddef57](https://github.com/moepmoep12/poe-dat-export/commit/1ddef5780d92ceaab0b0992ea534c5309a4dda61))
+
 # [1.3.0](https://github.com/moepmoep12/poe-dat-export/compare/v1.2.1...v1.3.0) (2022-11-11)
 
 
