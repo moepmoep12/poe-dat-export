@@ -5,14 +5,14 @@ import { Header } from "./models/Header";
 import { DatFile } from "./models/DatFile";
 
 export const INT32_NULL = 0xfefefefe;
-export const INT64_NULL = 0xfefefefefefefefen;
+// eslint-disable-next-line @typescript-eslint/no-loss-of-precision
+export const INT64_NULL = 0xfefefefefefefefe;
 
 const TEXT_DECODER = new TextDecoder("utf-16le");
 const STRING_TERMINATOR = 4;
 
 export type DatKeySelf = number | null;
 export type DatKeyForeign = number | null;
-// export type DatKeyForeign = { rid: number, unknown: number } | null
 
 export function readInteger(
   data: BinaryReader,
