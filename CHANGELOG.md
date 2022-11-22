@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/moepmoep12/poe-dat-export/compare/v1.3.1...v2.0.0) (2022-11-22)
+
+
+### Bug Fixes
+
+* null-keys as null ([eaca92e](https://github.com/moepmoep12/poe-dat-export/commit/eaca92e0950dd3ae130483bbdf783c2d4c40f792))
+
+
+### BREAKING CHANGES
+
+* Foreign keys that are null are now properly exported as null and no longer as 0xfefefefefefefefe
+
 ## [1.3.1](https://github.com/moepmoep12/poe-dat-export/compare/v1.3.0...v1.3.1) (2022-11-12)
 
 
